@@ -1,10 +1,21 @@
 import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-root',
+  selector: 'tb-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'i-welt'
+  title = 'Taskboard'
+  messages = [
+    'Hallo',
+    'Eibelstadt',
+    'in',
+    'Deutschland'
+  ]
+
+
+  updateTitle(title: string) {
+    this.title = title
+  }
 }
