@@ -1,3 +1,5 @@
-<p>
-  task-list works!
-</p>
+<h2>ToDo</h2>
+
+<tb-task-card
+  *ngFor="let task of tasks"
+  [task]="task"></tb-task-card>

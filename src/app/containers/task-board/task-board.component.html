@@ -1,5 +1,3 @@
 <tb-add-task (create)="addTask($event)"></tb-add-task>
-<tb-task-card
-  *ngFor="let task of tasks"
-  [task]="task"
-></tb-task-card>
+
+<tb-task-list [tasks]="tasks"></tb-task-list>
