@@ -24,4 +24,8 @@ export class TasksService {
       }
     ]
   }
+
+  remove(task: Task) {
+    this._tasks = this._tasks.filter(t => t.guid !== task.guid)
+  }
 }

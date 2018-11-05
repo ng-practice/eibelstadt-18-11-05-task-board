@@ -1,3 +1,5 @@
 <tb-add-task (create)="addTask($event)"></tb-add-task>
 
-<tb-task-list [tasks]="tasks"></tb-task-list>
+<tb-task-list
+  [tasks]="tasks"
+  (removeSingleTask)="removeTaskFromList($event)"></tb-task-list>

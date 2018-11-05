@@ -19,6 +19,11 @@ export class TaskBoardComponent {
     this._refresh()
   }
 
+  removeTaskFromList(task: Task) {
+    this._tasks.remove(task)
+    this._refresh()
+  }
+
   _refresh() {
     this.tasks = this._tasks.getAll()
   }

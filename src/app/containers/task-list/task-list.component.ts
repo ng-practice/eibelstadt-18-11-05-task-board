@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 import { Task } from 'src/app/models'
 
 @Component({
@@ -9,4 +9,7 @@ import { Task } from 'src/app/models'
 export class TaskListComponent {
   @Input()
   tasks: Task[] = []
+
+  @Output()
+  removeSingleTask = new EventEmitter<Task>()
 }

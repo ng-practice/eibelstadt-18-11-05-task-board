@@ -2,4 +2,5 @@
 
 <tb-task-card
   *ngFor="let task of tasks"
+  (remove)="removeSingleTask.emit(task)"
   [task]="task"></tb-task-card>
