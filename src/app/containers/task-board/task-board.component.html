@@ -1,3 +1,5 @@
-<p>
-  task-board works!
-</p>
+<tb-add-task (create)="addTask($event)"></tb-add-task>
+<tb-task-card
+  *ngFor="let task of tasks"
+  [task]="task"
+></tb-task-card>

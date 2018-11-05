@@ -1,9 +1,5 @@
 <h1>Welcome to awesome {{ title }}!</h1>
 
-<tb-secret-box
-  *ngFor="let entry of messages"
-  [message]="entry"
-  (greet)="updateTitle($event)">
-</tb-secret-box>
+<tb-task-board></tb-task-board>
 
 <router-outlet></router-outlet>
