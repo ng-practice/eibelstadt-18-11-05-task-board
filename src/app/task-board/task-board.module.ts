@@ -5,14 +5,16 @@ import { CardModule } from 'primeng/card'
 import { AddTaskComponent } from './components/add-task/add-task.component'
 import { TaskCardComponent } from './components/task-card/task-card.component'
 import { TaskBoardComponent } from './containers/task-board/task-board.component'
-import { TaskListComponent } from './containers/task-list/task-list.component'
+import { TaskListComponent } from './containers/task-list/task-list.component';
+import { TaskTableComponent } from './containers/task-table/task-table.component'
 
 @NgModule({
   declarations: [
     TaskListComponent,
     TaskBoardComponent,
     TaskCardComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    TaskTableComponent
   ],
   imports: [CommonModule, ButtonModule, CardModule],
   exports: [TaskBoardComponent]
