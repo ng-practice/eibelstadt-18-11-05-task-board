@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
+import { finalize } from 'rxjs/operators'
 import { TasksService } from '../../lib/tasks.service'
 import { Task, TaskDraft } from '../../models'
 
@@ -9,22 +10,31 @@ import { Task, TaskDraft } from '../../models'
 })
 export class TaskBoardComponent {
   tasks: Task[] = []
+  errorMessage = ''
+  completedMessage = ''
 
   constructor(private _tasks: TasksService) {
     this._refresh()
   }
 
   addTask(draft: TaskDraft) {
-    this._tasks.create(draft)
-    this._refresh()
+    this._tasks.create(draft).subscribe({
+      next: () => this._refresh()
+    })
   }
 
   removeTaskFromList(task: Task) {
-    this._tasks.remove(task)
-    this._refresh()
+    this._tasks.remove(task).subscribe(() => this._refresh())
   }
 
   _refresh() {
-    this.tasks = this._tasks.getAll()
+    this._tasks
+      .getAll()
+      .pipe(finalize(() => (this.completedMessage = 'Fertig')))
+      .subscribe({
+        next: tasks => (this.tasks = tasks),
+        error: err => (this.errorMessage = err),
+        complete: () => (this.completedMessage = 'Fertsch')
+      })
   }
 }
