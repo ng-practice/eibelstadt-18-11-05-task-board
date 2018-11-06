@@ -4,5 +4,5 @@
 <small style="color: rgb(113, 147, 62)">{{ completedMessage }}</small>
 
 <tb-task-list
-  [tasks]="tasks"
+  [tasks]="tasks$ | async"
   (removeSingleTask)="removeTaskFromList($event)"></tb-task-list>
