@@ -1,3 +1,7 @@
-<h4>{{ task.title }}</h4>
-<p>{{ task.text }}</p>
-<button (click)="remove.emit(task)">Remove</button>
+<p-card [header]="task.title">
+  <p>{{ task.text }}</p>
+  <button
+    pButton
+    (click)="remove.emit(task)"
+    icon="pi pi-trash"></button>
+</p-card>

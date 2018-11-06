@@ -1,3 +1,10 @@
-<input type="text" #title>
+<input
+  type="text"
+  #title>
 <textarea #text></textarea>
-<button (click)="emitCreate(title.value, text.value)">Create</button>
+<button
+  pButton
+  (click)="emitCreate(title.value, text.value)"
+  class="ui-button-raised">
+  Create
+</button>
