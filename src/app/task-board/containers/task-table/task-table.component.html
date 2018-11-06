@@ -21,7 +21,13 @@
       <th>ID</th>
       <th>Title</th>
       <th>Text</th>
-      <th>Is In Progress</th>
+      <th>
+        Is In Progress
+        <p-dropdown
+          [options]="[{label: 'True', value: true},{label: 'False', value: false}]"
+          [style]="{'width':'100%'}"
+          (onChange)="dt.filter($event.value, 'isInProgress', 'equals')"></p-dropdown>
+      </th>
       <th>Is Complete</th>
       <th>Is Favorite</th>
     </tr>

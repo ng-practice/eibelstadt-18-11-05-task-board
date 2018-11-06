@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { ButtonModule } from 'primeng/button'
 import { CardModule } from 'primeng/card'
+import { DropdownModule } from 'primeng/dropdown'
 import { TableModule } from 'primeng/table'
 import { InputTextModule } from 'primeng/inputtext'
 import { AddTaskComponent } from './components/add-task/add-task.component'
@@ -23,7 +24,8 @@ import { TaskTableComponent } from './containers/task-table/task-table.component
     ButtonModule,
     CardModule,
     TableModule,
-    InputTextModule
+    InputTextModule,
+    DropdownModule
   ],
   exports: [TaskBoardComponent]
 })
