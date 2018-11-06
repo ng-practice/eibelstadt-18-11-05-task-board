@@ -1,3 +1,8 @@
+<a [routerLink]="['/table']">Table View (Absolute)</a>
+<br>
+<a [routerLink]="['..', 'table']">Table View (Relative)</a>
+
+<h2>Add new Task</h2>
 <tb-add-task (create)="addTask($event)"></tb-add-task>
 
 <small>{{ errorMessage }}</small>
