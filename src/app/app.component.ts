@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-import { MessageService } from './lib/message.service'
 
 @Component({
   selector: 'tb-root',
@@ -8,11 +7,6 @@ import { MessageService } from './lib/message.service'
 })
 export class AppComponent {
   title = 'Taskboard'
-  messages: string[]
-
-  constructor(private some: MessageService) {
-    this.messages = this.some.getAll()
-  }
 
   updateTitle(title: string) {
     this.title = title

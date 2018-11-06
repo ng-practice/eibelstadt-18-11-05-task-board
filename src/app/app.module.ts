@@ -1,28 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
-
+import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
-import { AppComponent } from './app.component';
-import { SecretBoxComponent } from './secret-box/secret-box.component';
-import { TaskListComponent } from './containers/task-list/task-list.component';
-import { TaskBoardComponent } from './containers/task-board/task-board.component';
-import { TaskCardComponent } from './components/task-card/task-card.component';
-import { AddTaskComponent } from './components/add-task/add-task.component'
+import { AppComponent } from './app.component'
+import { SecretBoxComponent } from './secret-box/secret-box.component'
+import { TaskBoardModule } from './task-board/task-board.module'
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SecretBoxComponent,
-    TaskListComponent,
-    TaskBoardComponent,
-    TaskCardComponent,
-    AddTaskComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, SecretBoxComponent],
+  imports: [BrowserModule, TaskBoardModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

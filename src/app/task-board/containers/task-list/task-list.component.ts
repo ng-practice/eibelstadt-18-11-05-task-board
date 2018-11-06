@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
-import { Task } from 'src/app/models'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { Task } from '../../models'
 
 @Component({
   selector: 'tb-task-list',
