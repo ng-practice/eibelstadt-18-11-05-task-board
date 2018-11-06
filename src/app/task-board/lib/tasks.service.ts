@@ -1,16 +1,13 @@
+import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { Observable, of } from 'rxjs'
-import { catchError, tap } from 'rxjs/operators'
+import { Observable } from 'rxjs'
 import { newGuid } from 'ts-guid'
 import { Task, TaskDraft } from '../models'
-import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
 })
 export class TasksService {
-  private _tasks: Task[] = []
-
   constructor(private _http: HttpClient) {}
 
   // getAll(): Observable<Task[]> {
@@ -45,5 +42,10 @@ export class TasksService {
 
   update(task: Task) {
     return this._http.put(`http://localhost:3000/tasks`, task)
+  }
+
+  getSingle(guid: string): Observable<Task> {
+    return this._http.get<Task>
+      (`http://localhost:3000/tasks/${guid}`)
   }
 }

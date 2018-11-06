@@ -4,4 +4,6 @@
     pButton
     (click)="remove.emit(task)"
     icon="pi pi-trash"></button>
+  |
+  <a [routerLink]="['/task', task.guid]">Details</a>
 </p-card>
