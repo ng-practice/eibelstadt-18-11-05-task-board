@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { TasksService } from 'src/app/lib/tasks.service'
-import { Task, TaskDraft } from 'src/app/models'
+import { TasksService } from '../../lib/tasks.service'
+import { Task, TaskDraft } from '../../models'
 
 @Component({
   selector: 'tb-task-board',
